@@ -16,7 +16,7 @@ public class ClientService {
         this.clientRepository = clientRepository;
     }
 
-    public Client Create(Client client){
+    public Client create(Client client){
         return clientRepository.save(client);
     }
 
@@ -26,6 +26,14 @@ public class ClientService {
 
     public Optional<Client> findById(Long id){
         return clientRepository.findById(id);
+    }
+
+    public void delete(Long id){
+        clientRepository.deleteById(id);
+    }
+
+    public Client update(Client client){
+        return clientRepository.save(client);
     }
 
 }
