@@ -56,4 +56,15 @@ public class ClientController {
         return ResponseEntity.notFound().build();
     }
 
+    @PutMapping("/{id}")
+    public ResponseEntity<ClientResponse> update(@PathVariable Long id, @RequestBody ClientRequest clientRequest){
+        Optional<Client> optClient = clientService.findById(id);
+        if (optClient.isPresent()){
+            Client uptClient = ClientMapper.toClient(clientRequest);
+            clientService.update(id, uptClient);
+            return ResponseEntity.ok().body(ClientMapper.toClientResponse(uptClient));
+        }
+        return ResponseEntity.status(HttpStatus.NOT_FOUND).build();
+    }
+
 }
