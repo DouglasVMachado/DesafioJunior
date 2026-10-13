@@ -32,8 +32,12 @@ public class ClientService {
         clientRepository.deleteById(id);
     }
 
-    public Client update(Client client){
-        return clientRepository.save(client);
+    public Client update(Long id, Client client){
+        if(clientRepository.existsById(id)){
+            client.setId(id);
+            return clientRepository.save(client);
+        }
+        return null;
     }
 
 }
