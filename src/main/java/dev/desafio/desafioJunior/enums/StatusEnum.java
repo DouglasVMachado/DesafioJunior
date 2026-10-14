@@ -1,6 +1,6 @@
 package dev.desafio.desafioJunior.enums;
 
-public enum CalledEnum {
+public enum StatusEnum {
 
     ABERTO("aberto"),
     EM_ATENDIMENTO("atendimento"),
@@ -9,7 +9,7 @@ public enum CalledEnum {
 
     private String called;
 
-    CalledEnum(String called){
+    StatusEnum(String called){
         this.called = called;
     }
 
