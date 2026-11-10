@@ -27,6 +27,7 @@ public class Called {
     private PriorityEnum priority;
     private LocalDateTime openingDate;
     private LocalDateTime lastUpdated;
+    @ManyToOne
     private Client responsibleClient;
 
 }

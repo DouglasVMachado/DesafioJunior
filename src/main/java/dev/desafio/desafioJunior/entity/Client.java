@@ -5,6 +5,7 @@ import jakarta.persistence.*;
 import lombok.*;
 
 import java.time.LocalDateTime;
+import java.util.List;
 
 @Builder
 @AllArgsConstructor
@@ -23,5 +24,7 @@ public class Client {
     private String email;
     private String telephone;
     private LocalDateTime register;
+    @OneToMany
+    private List<Called> calleds;
 
 }

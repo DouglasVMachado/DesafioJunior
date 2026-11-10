@@ -46,7 +46,7 @@ public class ClientController {
                 .orElse(ResponseEntity.notFound().build());
     }
 
-    @DeleteMapping
+    @DeleteMapping("/{id}")
     public ResponseEntity<Void> delete(@PathVariable Long id){
         Optional<Client> optClient = clientService.findById(id);
         if(optClient.isPresent()){
