@@ -28,6 +28,7 @@ public class Called {
     private LocalDateTime openingDate;
     private LocalDateTime lastUpdated;
     @ManyToOne
+    @JoinColumn(name = "client_id")
     private Client responsibleClient;
 
 }

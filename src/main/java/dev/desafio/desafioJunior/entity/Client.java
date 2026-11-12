@@ -24,7 +24,7 @@ public class Client {
     private String email;
     private String telephone;
     private LocalDateTime register;
-    @OneToMany
+    @OneToMany(mappedBy = "client")
     private List<Called> calleds;
 
 }
